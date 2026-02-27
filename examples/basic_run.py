@@ -1,3 +1,22 @@
+"""Minimal runnable example.
+
+This script supports two common launch modes:
+1) after package install (`pip install -e .`), and
+2) directly from a git checkout without installation.
+"""
+
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+# Allow running `python examples/basic_run.py` from a fresh clone
+# without requiring editable install first.
+ROOT = Path(__file__).resolve().parents[1]
+SRC = ROOT / "src"
+if str(SRC) not in sys.path:
+    sys.path.insert(0, str(SRC))
+
 from ionmonger_py import SimulationConfig, simulate
 from ionmonger_py.io import save_solution_hdf5
 from ionmonger_py.protocols import linear_jv, preconditioning

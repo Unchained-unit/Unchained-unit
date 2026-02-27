@@ -16,6 +16,18 @@ Python port scaffold of IonMonger 2.0 for 1D planar PSC drift-diffusion + ion mi
 
 ## Quickstart
 
+Install in editable mode first:
+
+```bash
+python -m pip install -e .
+```
+
+Then run the example:
+
+```bash
+python examples/basic_run.py
+```
+
 ```python
 from ionmonger_py import SimulationConfig, simulate
 from ionmonger_py.protocols import preconditioning, linear_jv
